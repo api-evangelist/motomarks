@@ -1,0 +1,99 @@
+name: Motomarks
+description: >-
+  A car-manufacturer logo API and image CDN delivering badge, wordmark, and full-logo assets plus structured brand data
+  for 420+ automotive brands. Offers a REST/JSON API, a token-authenticated image CDN, a hosted MCP server, an llms.txt,
+  and published agent skills.
+url: https://raw.githubusercontent.com/api-evangelist/motomarks/refs/heads/main/apis.yml
+created: '2026-09-08'
+modified: '2026-09-08'
+specificationVersion: '0.21'
+tags:
+  - automotive
+  - logo
+  - image-cdn
+  - manufacturer
+  - brand-assets
+  - images
+  - CDN
+  - developer-tools
+  - agent-native
+  - MCP
+  - reference-data
+apis:
+  - name: JSON API
+    description: >-
+      Bearer-authenticated REST/JSON API for listing brands and retrieving full brand detail including color palettes,
+      website, social links, and metadata.
+    humanURL: https://motomarks.io/docs/api-reference
+    baseURL: https://api.motomarks.io
+    tags:
+      - automotive
+      - logo
+      - image-cdn
+      - manufacturer
+      - brand-assets
+      - images
+      - CDN
+      - developer-tools
+      - agent-native
+      - MCP
+      - reference-data
+    properties:
+      - type: Documentation
+        url: https://motomarks.io/docs/api-reference
+  - name: Image CDN
+    description: >-
+      Token-authenticated global image CDN delivering car logos in full, badge, and wordmark variants across multiple
+      sizes and formats.
+    humanURL: https://motomarks.io/docs/image-cdn
+    baseURL: https://motomarks.io/img
+    tags:
+      - automotive
+      - logo
+      - image-cdn
+      - manufacturer
+      - brand-assets
+      - images
+      - CDN
+      - developer-tools
+      - agent-native
+      - MCP
+      - reference-data
+    properties:
+      - type: Documentation
+        url: https://motomarks.io/docs/image-cdn
+  - name: MCP Server
+    description: >-
+      Hosted streamable-HTTP MCP server exposing read-only brand tools, account tools, resources, and prompts. Auth via
+      OAuth 2.1 or Bearer secret key. Registry name io.motomarks/mcp.
+    humanURL: https://motomarks.io/docs
+    baseURL: https://motomarks.io/api/mcp
+    tags:
+      - automotive
+      - logo
+      - image-cdn
+      - manufacturer
+      - brand-assets
+      - images
+      - CDN
+      - developer-tools
+      - agent-native
+      - MCP
+      - reference-data
+    properties:
+      - type: MCPServer
+        url: https://motomarks.io/api/mcp
+      - type: LLMsTxt
+        url: https://motomarks.io/llms.txt
+      - type: AgentSkill
+        url: https://github.com/motomarks/motomarks-mcp
+      - type: Documentation
+        url: https://motomarks.io/docs
+maintainers:
+  - FN: Motomarks
+    url: https://motomarks.io
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 95
+  at: '2026-09-08T06:43:19.459Z'
