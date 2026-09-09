@@ -1,0 +1,43 @@
+name: Motomarks API Conventions
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/docs/api-reference
+note: >-
+  Cross-cutting semantics assembled from the public docs (api-reference, image-cdn, api-keys, rate-limits,
+  caching) plus live probes; no OpenAPI is published. The public surface is entirely read-only (GET brand
+  data and images; the only mutations are account sign-up flows on the MCP server), so idempotency,
+  reversibility and dry-run are honestly not-applicable rather than absent.
+auth:
+  style: Bearer secret key (sk_) for the JSON API; publishable key (pk_) as ?token= query parameter for the Image CDN; OAuth 2.1 for MCP
+  see: authentication/motomarks-authentication.yml
+idempotency:
+  coverage: na
+  note: The published API surface is read-only (GET /brands, GET /brands/{id}, GET /img/{slug}); there is no mutating surface to protect. No Idempotency-Key mechanism is documented.
+reversibility:
+  status: na
+  note: Read-only API - no write operations exist to reverse. MCP sign-up creates an account; key revocation is available in the dashboard.
+dry_run_mode:
+  status: na
+  note: Read-only API; no dry-run mechanism documented or needed.
+pagination:
+  style: none-documented
+  note: GET /brands returns the full brand list; the MCP/api-v1 surface documents q= and limit= query parameters on brand search but no cursor or page tokens.
+versioning:
+  scheme: URL path on the consolidated surface (/api/v1/... per the MCP api-v1 resource); the documented public base api.motomarks.io/brands carries no version segment.
+  see: lifecycle/motomarks-lifecycle.yml
+error_envelope:
+  shape: '{"error": "<code>"}'
+  content_type: application/json
+  see: errors/motomarks-problem-types.yml
+rate_limit_signaling:
+  status_on_exhaustion: 429
+  headers: none documented
+  see: rate-limits/motomarks-rate-limits.yml
+caching:
+  cache_control: public, max-age=86400, immutable
+  note: All Image CDN responses carry a 24-hour immutable Cache-Control header; cached responses still count toward daily quota.
+request_attribution:
+  header: X-Motomarks-Referer
+  note: Optional analytics-only header naming the calling site/app for server-side requests.
+request_id_tracing: none documented
+field_expansion: none documented

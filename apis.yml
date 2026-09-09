@@ -4,8 +4,9 @@ description: >-
   for 420+ automotive brands. Offers a REST/JSON API, a token-authenticated image CDN, a hosted MCP server, an llms.txt,
   and published agent skills.
 url: https://raw.githubusercontent.com/api-evangelist/motomarks/refs/heads/main/apis.yml
+image: https://motomarks.io/favicon.png
 created: '2026-09-08'
-modified: '2026-09-08'
+modified: '2026-09-09'
 specificationVersion: '0.21'
 tags:
   - automotive
@@ -25,6 +26,7 @@ apis:
       Bearer-authenticated REST/JSON API for listing brands and retrieving full brand detail including color palettes,
       website, social links, and metadata.
     humanURL: https://motomarks.io/docs/api-reference
+    image: https://motomarks.io/favicon.png
     baseURL: https://api.motomarks.io
     tags:
       - automotive
@@ -46,6 +48,7 @@ apis:
       Token-authenticated global image CDN delivering car logos in full, badge, and wordmark variants across multiple
       sizes and formats.
     humanURL: https://motomarks.io/docs/image-cdn
+    image: https://motomarks.io/favicon.png
     baseURL: https://motomarks.io/img
     tags:
       - automotive
@@ -67,6 +70,7 @@ apis:
       Hosted streamable-HTTP MCP server exposing read-only brand tools, account tools, resources, and prompts. Auth via
       OAuth 2.1 or Bearer secret key. Registry name io.motomarks/mcp.
     humanURL: https://motomarks.io/docs
+    image: https://motomarks.io/favicon.png
     baseURL: https://motomarks.io/api/mcp
     tags:
       - automotive
@@ -83,17 +87,76 @@ apis:
     properties:
       - type: MCPServer
         url: https://motomarks.io/api/mcp
+      - type: MCPServer
+        url: mcp/motomarks-mcp.yml
       - type: LLMsTxt
         url: https://motomarks.io/llms.txt
+      - type: LLMsTxt
+        url: llms/motomarks-llms.txt
       - type: AgentSkill
         url: https://github.com/motomarks/motomarks-mcp
+      - type: AgentSkill
+        url: skills/_index.yml
       - type: Documentation
         url: https://motomarks.io/docs
 maintainers:
   - FN: Motomarks
     url: https://motomarks.io
-generated:
+    email: support@motomarks.io
+x-generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 95
   at: '2026-09-08T06:43:19.459Z'
+common:
+- type: Website
+  url: https://motomarks.io
+- type: DomainSecurity
+  url: security/motomarks-domain-security.yml
+- type: WellKnown
+  url: well-known/motomarks-well-known.yml
+- type: Authentication
+  url: authentication/motomarks-authentication.yml
+- type: OAuthScopes
+  url: scopes/motomarks-scopes.yml
+- type: Conformance
+  url: conformance/motomarks-conformance.yml
+- type: ErrorCatalog
+  url: errors/motomarks-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/motomarks-lifecycle.yml
+- type: Conventions
+  url: conventions/motomarks-conventions.yml
+- type: ChangeLog
+  url: changelog/motomarks-changelog.yml
+- type: ChangeLog
+  url: https://motomarks.io/changelog
+- type: Plans
+  url: plans/motomarks-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/motomarks-rate-limits.yml
+- type: DataModel
+  url: data-model/motomarks-data-model.yml
+- type: Packages
+  url: packages/motomarks-packages.yml
+- type: VulnerabilityDisclosure
+  url: security/motomarks-vulnerability-disclosure.yml
+- type: Security
+  url: security/motomarks-vulnerability-disclosure.yml
+- type: APIReference
+  url: https://motomarks.io/docs/api-reference
+- type: GettingStarted
+  url: https://motomarks.io/docs
+- type: Pricing
+  url: https://motomarks.io/pricing
+- type: TermsOfService
+  url: https://motomarks.io/terms
+- type: PrivacyPolicy
+  url: https://motomarks.io/privacy
+- type: GitHubOrganization
+  url: https://github.com/motomarks
+x-enrichment:
+  date: '2026-09-09'
+  status: enriched
+  artifacts_added: 24
+  pass: local-v3

@@ -1,0 +1,50 @@
+name: Motomarks Well-Known Documents
+generated: '2026-09-09'
+method: probed
+source: live probes of motomarks.io, api.motomarks.io, www.motomarks.io
+note: >-
+  motomarks.io serves real OAuth 2.0 Authorization Server Metadata (RFC 8414) and OAuth Protected Resource
+  Metadata (RFC 9728) supporting the MCP authorization flow; both saved verbatim. security.txt, openid-configuration,
+  api-catalog, ai-plugin.json and both agent-card paths 404 on the primary host. api.motomarks.io answers 403
+  {"error":"invalid_token"} for every path (a CloudFront token gate in front of the whole host). www.motomarks.io
+  does not resolve.
+hosts:
+  - host: motomarks.io
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: well-known/motomarks-oauth-authorization-server.json
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        file: well-known/motomarks-oauth-protected-resource.json
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: api.motomarks.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/agent-card.json
+        status: 403
+  - host: www.motomarks.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: host does not resolve

@@ -1,0 +1,42 @@
+name: Motomarks Plans and Pricing
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/pricing
+plan_count: 4
+note: >-
+  Annual billing offers two months free versus monthly. Every plan includes the published automotive brand
+  library, PNG/WebP output, full/badge/wordmark variants where available, five sizes (64px-1024px), square and
+  height aspect options, Image CDN delivery, the JSON API, and an API key + usage dashboard.
+plans:
+  - name: Free
+    price: 0
+    currency: USD
+    billing_period: monthly
+    included_quota: 1,000 requests/day
+    audience: Prototypes, personal projects, low-traffic launches
+    limits:
+      - Attribution link back to motomarks.io required (verified every 3 days)
+      - Hard 429 limit at quota until next UTC day
+  - name: Startup
+    price: 19
+    currency: USD
+    billing_period: monthly
+    included_quota: 10,000 requests/day
+    audience: Production applications and small development teams
+    features: [Email support, Usage analytics dashboard, No attribution required]
+    overage: Soft limit; provider reaches out about upgrading
+  - name: Pro
+    price: 49
+    currency: USD
+    billing_period: monthly
+    included_quota: 100,000 requests/day
+    audience: High-traffic automotive products
+    features: [Per-key domain restrictions, Priority email support, Self-hosting and caching permission, No attribution required]
+    overage: Soft limit
+  - name: Enterprise
+    price: custom
+    currency: USD
+    billing_period: custom
+    included_quota: Custom limits
+    audience: Custom delivery options, additional data, or contract terms
+    contact: Contact sales via https://motomarks.io/pricing

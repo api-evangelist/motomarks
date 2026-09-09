@@ -1,0 +1,21 @@
+name: Motomarks Agent Skills
+generated: '2026-09-09'
+method: searched
+source: https://github.com/motomarks/motomarks-mcp
+note: >-
+  Provider-published Agent Skill saved verbatim from the official motomarks/motomarks-mcp repository
+  (skills/find-brand-logo/SKILL.md, distributed via the repo's .claude-plugin/plugin.json which registers
+  ./skills/). Grounded in the live MCP tools (search_brands, list_brand_assets, build_image_url, get_brand,
+  get_account) confirmed by an anonymous tools/list probe on 2026-09-09.
+skills:
+  - name: find-brand-logo
+    file: skills/motomarks-find-brand-logo.md
+    source: https://raw.githubusercontent.com/motomarks/motomarks-mcp/main/skills/find-brand-logo/SKILL.md
+    http_status: 200
+    api: Motomarks MCP Server
+    operations:
+      - search_brands
+      - list_brand_assets
+      - build_image_url
+      - get_brand
+      - get_account

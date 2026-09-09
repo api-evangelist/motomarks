@@ -1,0 +1,37 @@
+name: Motomarks Data Model
+generated: '2026-09-09'
+method: derived
+source: https://motomarks.io/docs/api-reference
+note: >-
+  Derived from the documented JSON API response shapes (list/get brand examples) and the MCP tool schemas
+  (get_brand, list_brand_assets); no OpenAPI or JSON Schema is published. Brand ids are human-readable slugs
+  (e.g. toyota, mercedes-benz) shared across the JSON API, the Image CDN path, and logo pages.
+entities:
+  - name: Brand
+    id_field: id (slug, e.g. ferrari)
+    fields:
+      - id
+      - name
+      - color            # always equals colors[0]
+      - colors           # hex list in priority order
+      - vehicleTypes     # subset of [car, motorcycle, truck, boat, rv]
+      - palette          # verified swatch metadata, optional
+      - website
+      - social           # twitter/youtube/facebook/linkedin/instagram URLs
+      - description      # logo history prose
+      - updatedAt
+  - name: PaletteSwatch
+    fields: [name, hex, rgb, role, meaning]
+    note: role is primary/secondary/neutral; meaning is optional prose.
+  - name: Asset
+    fields: [type, format, size, aspect, dimensions]
+    note: type full|badge|wordmark|sub-brand; format webp|png|svg; sizes xs(64)-xl(1024); aspect square|height. Exposed via MCP list_brand_assets and rendered by the Image CDN.
+relationships:
+  - from: Brand
+    to: PaletteSwatch
+    type: has_many
+    via: palette
+  - from: Brand
+    to: Asset
+    type: has_many
+    via: assets (MCP list_brand_assets slug)

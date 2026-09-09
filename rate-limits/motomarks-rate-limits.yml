@@ -1,0 +1,36 @@
+name: Motomarks Rate Limits
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/docs/platform/rate-limits
+limit_count: 4
+note: >-
+  Limits are plan-scoped daily quotas counted across both surfaces - every call to the Image CDN
+  (motomarks.io/img) and the JSON API (api.motomarks.io) counts, including CDN cache hits. Free-plan
+  attribution is re-checked every 3 days; removing the link deactivates API keys. The docs publish no
+  rate-limit response headers (no X-RateLimit-*/RateLimit-*/Retry-After documented); the only documented
+  runtime signal is 429 on free-plan exhaustion.
+limits:
+  - scope: per-account
+    plan: Free
+    window: 1 day (resets UTC midnight)
+    limit: 1000
+    enforcement: hard
+    status_on_exhaustion: 429
+    attribution_required: true
+  - scope: per-account
+    plan: Startup
+    window: 1 day
+    limit: 10000
+    enforcement: soft
+    note: Provider contacts you about upgrading; service generally not interrupted for reasonable overages.
+  - scope: per-account
+    plan: Pro
+    window: 1 day
+    limit: 100000
+    enforcement: soft
+  - scope: per-account
+    plan: Enterprise
+    window: 1 day
+    limit: custom
+    enforcement: custom
+headers: []

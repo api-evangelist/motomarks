@@ -1,0 +1,23 @@
+name: Motomarks OAuth Scopes
+generated: '2026-09-09'
+method: probed
+source: https://motomarks.io/.well-known/oauth-authorization-server
+docs: https://motomarks.io/docs/mcp
+note: >-
+  Scopes read from the live RFC 8414 authorization-server metadata (HTTP 200, 2026-09-09), which backs the MCP
+  OAuth 2.1 flow. These are identity-shaped scopes only; API capability is governed by the account's plan and
+  key type rather than granular OAuth scopes, and the docs publish no additional scope reference.
+scopes:
+  - id: openid
+    description: OpenID Connect authentication of the Motomarks account.
+  - id: profile
+    description: Basic profile information for the signed-in user.
+  - id: email
+    description: Email address of the signed-in user.
+  - id: offline_access
+    description: Refresh-token issuance so MCP clients stay connected without re-authorizing.
+grants_supported:
+  - authorization_code
+  - refresh_token
+pkce: S256
+dynamic_client_registration: true

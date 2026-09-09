@@ -1,0 +1,21 @@
+name: Motomarks Lifecycle
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/docs
+note: >-
+  Young product (site copyright 2026, part of the Throttle Club group). The MCP server self-reports version
+  1.1.0; the consolidated REST surface is versioned /api/v1 per the server's own api-v1 resource. No deprecation
+  policy, no Sunset/Deprecation header usage, no SLA and no public status page are published (status.motomarks.io
+  does not resolve; motomarks.io/status 404s). The changelog tracks daily brand-library content changes rather
+  than API contract changes.
+versioning:
+  current: v1
+  scheme: URL path (/api/v1/...) on the consolidated surface; unversioned paths on api.motomarks.io
+deprecation_policy: none published
+sunset_headers: not documented
+sla: none published
+status_page: none found (https://status.motomarks.io does not resolve; https://motomarks.io/status returned 404, probed 2026-09-09)
+changelog:
+  url: https://motomarks.io/changelog
+  see: changelog/motomarks-changelog.yml
+deprecated_operations: []

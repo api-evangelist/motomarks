@@ -1,0 +1,63 @@
+# Motomarks
+
+> Every car logo, one simple API. Production-ready automotive logos and structured brand data for developers.
+
+## About
+
+Motomarks provides an image CDN and JSON API for automotive products. Published assets are available as full logos, badges, and wordmarks in PNG and WebP, with five preset sizes and two aspect behaviors.
+
+## Main Pages
+
+- [Homepage](https://motomarks.io): Car logo API landing page with use cases and quick start
+- [About](https://motomarks.io/about): Learn about Motomarks, our mission and team
+- [Car Logos](https://motomarks.io/logos): Logo index with production-ready logo pages and CDN URLs
+- [Browse All Brands](https://motomarks.io/browse): Search the current published automotive brand library
+- [Pricing](https://motomarks.io/pricing): Free tier and paid plans
+- [Brand Changelog](https://motomarks.io/changelog): Daily digests of new brands, logo updates, and metadata changes
+- [Documentation](https://motomarks.io/docs): Getting started guide and integration examples
+- [API Reference](https://motomarks.io/docs/api-reference): JSON API endpoint documentation
+- [Image CDN Docs](https://motomarks.io/docs/image-cdn): Image CDN parameters and usage
+- [MCP Server Docs](https://motomarks.io/docs/mcp): Connect AI tools to Motomarks over the Model Context Protocol
+- [Attribution Requirements](https://motomarks.io/docs/platform/attribution): Free plan link-back requirements
+- [Rate Limits](https://motomarks.io/docs/platform/rate-limits): Daily request quotas per plan
+- [Submit a Brand](https://motomarks.io/submit): Request a new brand to be added
+
+## Logo Pages
+
+Every published brand has a stable logo page at https://motomarks.io/logos/{brand-slug} (for example https://motomarks.io/logos/porsche).
+
+Each logo page includes:
+- The current manufacturer mark and available variants (full, badge, wordmark)
+- Production CDN URL pattern: https://motomarks.io/img/{brand-slug}
+- Brand facts (founded year, country, company, colors)
+- How to add the logo in an app (CDN parameters and publishable key)
+- History, logo changes, design notes, and FAQs when enrichment exists
+- Related manufacturer pages for internal navigation
+
+Logos remain the property of their owners. Motomarks delivers published assets and structured data; it does not grant trademark rights.
+
+## API
+
+- Image CDN: https://motomarks.io/img/{brand-slug}
+- Parameters: type (full|badge|wordmark), size (xs|sm|md|lg|xl), format (png|webp), aspect (square|height)
+- JSON API: https://api.motomarks.io/brands
+- MCP server: https://motomarks.io/api/mcp (OAuth or secret-key auth; search brands, get brand data, build CDN URLs)
+- Current coverage: https://motomarks.io/logos
+- Free tier: 1,000 requests/day (attribution link required)
+
+## Content Sections (planned)
+
+The following sections are planned and may not be live yet:
+
+- Best Of: https://motomarks.io/best — Curated lists of top automotive logos
+- Comparisons: https://motomarks.io/compare — Side-by-side brand logo comparisons
+- Directory: https://motomarks.io/directory — Browse brands by category
+- Glossary: https://motomarks.io/glossary — Automotive branding terminology
+- Examples: https://motomarks.io/examples — Real-world logo design examples
+- Car Brands by Country: https://motomarks.io/car-brands-from — Brands organized by origin
+- Solutions: https://motomarks.io/for — Use case guides by industry
+
+## Contact
+
+- Email: support@motomarks.io
+- Website: https://motomarks.io

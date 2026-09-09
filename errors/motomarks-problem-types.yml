@@ -1,0 +1,27 @@
+name: Motomarks Problem Types
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/docs/api-reference
+format: json-error-envelope
+note: >-
+  No OpenAPI is published; catalog assembled from the rate-limits docs and a live unauthenticated probe of
+  api.motomarks.io (403 observed 2026-09-09). Errors are a simple {"error": "<code>"} JSON envelope, not
+  RFC 9457 problem+json.
+envelope:
+  content_type: application/json
+  shape: '{"error": "<code>"}'
+problems:
+  - status: 403
+    code: invalid_token
+    title: Invalid or missing API key
+    detail: >-
+      Returned by api.motomarks.io for any request without a valid "Authorization: Bearer sk_..." secret key;
+      generated at the CDN edge (CloudFront function).
+    remediation: Send a valid secret key in the Authorization header; create keys in the dashboard at https://motomarks.io/dashboard.
+    evidence: probed 2026-09-09, GET https://api.motomarks.io/brands -> 403 {"error":"invalid_token"}
+  - status: 429
+    code: too_many_requests
+    title: Daily request limit exceeded
+    detail: Free-plan requests over the 1,000/day quota return 429 Too Many Requests until UTC midnight; paid plans are soft-limited (provider contacts you rather than interrupting service).
+    remediation: Wait for the daily reset (UTC midnight) or upgrade the plan; see https://motomarks.io/docs/platform/rate-limits.
+    evidence: documented at https://motomarks.io/docs/platform/rate-limits

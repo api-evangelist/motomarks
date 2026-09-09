@@ -1,0 +1,49 @@
+name: Motomarks Authentication
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/docs/platform/api-keys
+docs: https://motomarks.io/docs/platform/api-keys
+note: >-
+  No OpenAPI is published; profile assembled from the API-keys, API-reference and MCP docs plus live probes of
+  the OAuth discovery documents and the gated API host (api.motomarks.io answers 403 {"error":"invalid_token"}
+  without a key).
+schemes:
+  - id: secret-key-bearer
+    type: http
+    scheme: bearer
+    key_prefix: sk_
+    surfaces: [JSON API, MCP Server (headless)]
+    description: >-
+      Secret keys (sk_...) are server-side only, sent as "Authorization: Bearer YOUR_SECRET_KEY". They
+      authenticate the JSON API (api.motomarks.io) and headless connections to the MCP server. Full account
+      access; never for client-side code.
+  - id: publishable-key-token
+    type: apiKey
+    in: query
+    name: token
+    key_prefix: pk_
+    surfaces: [Image CDN]
+    description: >-
+      Publishable keys (pk_...) are safe to expose client-side and authenticate the Image CDN as a ?token=
+      query parameter. On Pro and Enterprise plans each publishable key can carry a hostname allowlist
+      (Origin/Referer-checked domain restrictions; wildcard subdomains supported; localhost always permitted).
+  - id: oauth2
+    type: oauth2
+    surfaces: [MCP Server]
+    flows:
+      authorizationCode:
+        authorizationUrl: https://motomarks.io/api/auth/mcp/authorize
+        tokenUrl: https://motomarks.io/api/auth/mcp/token
+        refreshUrl: https://motomarks.io/api/auth/mcp/token
+        scopes:
+          openid: OpenID Connect identity
+          profile: Basic profile
+          email: Email address
+          offline_access: Refresh tokens
+    description: >-
+      OAuth 2.1 authorization-code with PKCE (S256) and dynamic client registration (registration_endpoint
+      published) per the MCP authorization spec. Discovery via /.well-known/oauth-authorization-server and
+      /.well-known/oauth-protected-resource on motomarks.io (both HTTP 200, saved under well-known/).
+optional_headers:
+  - name: X-Motomarks-Referer
+    description: Optional analytics-only attribution of server-side requests to a site or app; never access control.

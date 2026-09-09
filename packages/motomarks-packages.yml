@@ -1,0 +1,33 @@
+name: Motomarks Packages
+generated: '2026-09-09'
+method: searched
+source: https://registry.npmjs.org/@motomarks%2fmcp
+note: >-
+  Motomarks ships no REST client SDKs; its first-party package surface is MCP-shaped. The npm scope @motomarks
+  carries one package, the MCP server package, last published 2026-06-05 (before the hosted endpoint at
+  https://motomarks.io/api/mcp became the documented primary, so its staleness reflects a deployment shift to
+  hosted MCP rather than product abandonment - the hosted server reports version 1.1.0). PyPI, RubyGems, Packagist,
+  NuGet, Maven, crates.io and pkg.go.dev were not referenced anywhere in the docs; docs integration examples are
+  plain HTTP/img-tag based.
+packages:
+  - name: '@motomarks/mcp'
+    registry: npm
+    url: https://www.npmjs.com/package/@motomarks/mcp
+    official: true
+    language: JavaScript
+    version: 0.1.2
+    published: '2026-06-05'
+    license: MIT
+    bin: motomarks-mcp
+    repository: https://github.com/motomarks/motomarks-mcp
+    description: MCP server for Motomarks brand search, brand assets, and image CDN URLs.
+  - name: mcp-remote
+    registry: npm
+    url: https://www.npmjs.com/package/mcp-remote
+    official: false
+    language: JavaScript
+    version: null
+    published: null
+    note: >-
+      Third-party stdio-to-HTTP proxy the provider documents for stdio-only MCP clients
+      ("npx -y mcp-remote https://motomarks.io/api/mcp"); not a Motomarks package, version not tracked here.

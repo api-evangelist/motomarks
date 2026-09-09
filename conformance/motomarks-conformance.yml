@@ -1,0 +1,34 @@
+name: Motomarks Conformance
+generated: '2026-09-09'
+method: probed
+source: live probes of motomarks.io discovery documents and MCP endpoint, 2026-09-09
+entries:
+  - id: oauth2-authorization-server-metadata-rfc8414
+    conforms: true
+    evidence: https://motomarks.io/.well-known/oauth-authorization-server returned 200 with issuer, endpoints, grants (saved well-known/motomarks-oauth-authorization-server.json)
+  - id: oauth2-protected-resource-metadata-rfc9728
+    conforms: true
+    evidence: https://motomarks.io/.well-known/oauth-protected-resource returned 200 with resource + authorization_servers (saved well-known/motomarks-oauth-protected-resource.json)
+  - id: oauth2-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported [S256] in the RFC 8414 metadata
+  - id: oauth2-dynamic-client-registration-rfc7591
+    conforms: true
+    evidence: registration_endpoint https://motomarks.io/api/auth/mcp/register in the RFC 8414 metadata; docs/mcp describes dynamic client registration on first connect
+  - id: mcp-streamable-http
+    conforms: true
+    evidence: POST https://motomarks.io/api/mcp initialize returned protocolVersion 2025-06-18, serverInfo motomarks 1.1.0; tools/resources/prompts capabilities advertised
+  - id: oidc
+    conforms: false
+    evidence: >-
+      OIDC-shaped pieces exist (openid/profile/email scopes, userinfo_endpoint, RS256 id_token alg) but
+      https://motomarks.io/.well-known/openid-configuration returns 404, so standard OIDC discovery is absent.
+  - id: rfc9457
+    conforms: false
+    evidence: Errors are a bare {"error":"invalid_token"} JSON envelope (observed on api.motomarks.io, 403), not application/problem+json.
+  - id: securitytxt-rfc9116
+    conforms: false
+    evidence: /.well-known/security.txt 404 on motomarks.io; disclosure policy lives in the GitHub repo SECURITY.md instead.
+domain_standard: >-
+  No domain standard exists for the brand-asset / logo-CDN market; no domain-standard conformance is asserted
+  (reward-only check, honest absence).

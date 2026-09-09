@@ -1,0 +1,73 @@
+name: Motomarks MCP Server
+generated: '2026-09-09'
+method: probed
+source: https://motomarks.io/api/mcp
+status: official
+description: >-
+  Official hosted Model Context Protocol server for the Motomarks car-logo API and image CDN. Streamable-HTTP
+  transport at https://motomarks.io/api/mcp, MCP Registry name io.motomarks/mcp. Anonymous sessions can call
+  search_brands / get_brand; CDN URL generation and account tools require sign-up (OAuth 2.1 with dynamic client
+  registration + PKCE, or a Bearer secret key for headless use). tools/list, resources/list, prompts/list and
+  initialize all answered unauthenticated on 2026-09-09 (HTTP 200).
+deployment:
+  mode: both
+  endpoint: https://motomarks.io/api/mcp
+  install: npx -y mcp-remote https://motomarks.io/api/mcp
+  package: https://www.npmjs.com/package/@motomarks/mcp
+  auth: oauth
+  verified: probed
+  notes: >-
+    The primary product is the hosted endpoint (the GitHub repo ships no server code). Stdio-only clients connect
+    through the provider-documented mcp-remote proxy; a first-party npm package @motomarks/mcp (v0.1.2,
+    2026-06-05, bin motomarks-mcp) also exists. Auth is OAuth 2.1 (dynamic client registration + PKCE) or
+    Authorization: Bearer secret key; discovery/list methods and search_brands/get_brand answer anonymously.
+server:
+  protocolVersion: '2025-06-18'
+  serverInfo:
+    name: motomarks
+    version: 1.1.0
+  registry_name: io.motomarks/mcp
+  registry_manifest: mcp/motomarks-server.json
+  capabilities: [tools, resources, prompts]
+  tools_file: mcp/motomarks-tools.json
+  tools:
+    - name: sign_up
+      description: Create a free Motomarks account or start sign-in for an existing email; sends a six-digit code.
+    - name: complete_sign_up
+      description: Verify the six-digit email code; new accounts receive API keys.
+    - name: search_brands
+      description: Search published brands by name, company, or slug; optional vehicle-type filter and CDN image URLs.
+    - name: get_brand
+      description: Full brand detail - description, colors, palette, social links, company facts, FAQs, assets.
+    - name: list_brand_assets
+      description: List available logo assets (type/format/size/aspect) for a brand with CDN URLs.
+    - name: build_image_url
+      description: Build a deterministic image CDN URL signed with the caller's publishable key.
+    - name: describe_api_endpoint
+      description: HTTP reference for the raw REST operations (searchBrands, getBrand, listAssets, imageCdn).
+    - name: get_account
+      description: Authenticated caller's plan, attribution status, daily usage, and masked API keys.
+  resources:
+    - uri: motomarks://docs/image-cdn
+      description: CDN URL format and query parameters (text/markdown).
+    - uri: motomarks://docs/api-v1
+      description: API v1 auth and endpoint summary (text/markdown); saved at mcp/motomarks-resource-api-v1.md.
+    - uri: motomarks://brand/{slug}
+      description: Per-brand resource template documented at https://motomarks.io/docs/mcp.
+  prompts:
+    - name: create_motomarks_account
+    - name: find_brand_logo
+    - name: embed_brand_image
+documentation: https://motomarks.io/docs/mcp
+repository: https://github.com/motomarks/motomarks-mcp
+x-evidence:
+  - url: https://motomarks.io/api/mcp
+    method: POST tools/list
+    http_status: 200
+    fetched: '2026-09-09'
+  - url: https://motomarks.io/.well-known/oauth-authorization-server
+    http_status: 200
+    fetched: '2026-09-09'
+  - url: https://motomarks.io/.well-known/oauth-protected-resource
+    http_status: 200
+    fetched: '2026-09-09'

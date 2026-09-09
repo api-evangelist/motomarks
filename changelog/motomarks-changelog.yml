@@ -1,0 +1,26 @@
+name: Motomarks Changelog
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/changelog
+scheme: dated daily digests of brand-library changes (brands added, logos refreshed, colours and URLs updated)
+current_version: MCP server 1.1.0; REST surface v1
+note: >-
+  The public changelog is a content changelog for the logo library rather than an API contract changelog;
+  entries are daily digests. Recent window captured 2026-09-09.
+entries:
+  - date: '2026-09-08'
+    type: Library update
+    breaking: false
+    highlights: 8 brands, 65 changes - added 4 brands, refreshed 24 logos, updated 4 colours, updated 7 URLs.
+  - date: '2026-09-07'
+    type: Library update
+    breaking: false
+    highlights: 97 brands, 888 changes - added 97 brands, refreshed 291 logos, updated 93 colours, updated 96 URLs.
+  - date: '2026-08-17'
+    type: Library update
+    breaking: false
+    highlights: BAIC received 4 changes - updated 1 colour and 1 URL.
+  - date: '2026-08-12'
+    type: Content update
+    breaking: false
+    highlights: 22 brands, 43 changes - refreshed 6 logos and updated 20 URLs.

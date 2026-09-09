@@ -1,0 +1,10 @@
+name: Motomarks llms.txt
+generated: '2026-09-09'
+method: searched
+source: https://motomarks.io/llms.txt
+http_status: 200
+file: llms/motomarks-llms.txt
+note: >-
+  First-party llms.txt fetched verbatim from the site root (3,466 bytes, 2026-09-09). Covers main pages,
+  per-brand logo pages, the Image CDN URL pattern with parameters, the JSON API base, the MCP endpoint,
+  free-tier terms, and planned content sections.

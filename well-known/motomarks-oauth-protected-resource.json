@@ -1,0 +1,19 @@
+{
+    "resource": "https://motomarks.io",
+    "authorization_servers": [
+        "https://motomarks.io"
+    ],
+    "jwks_uri": "https://motomarks.io/api/auth/mcp/jwks",
+    "scopes_supported": [
+        "openid",
+        "profile",
+        "email",
+        "offline_access"
+    ],
+    "bearer_methods_supported": [
+        "header"
+    ],
+    "resource_signing_alg_values_supported": [
+        "RS256"
+    ]
+}
