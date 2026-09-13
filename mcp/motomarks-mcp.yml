@@ -81,3 +81,23 @@ x-evidence:
 - url: https://motomarks.io/.well-known/oauth-protected-resource
   http_status: 200
   fetched: '2026-09-09'
+tools_count: 8
+tools:
+- name: sign_up
+  description: ''
+- name: complete_sign_up
+  description: ''
+- name: search_brands
+  description: ''
+- name: get_brand
+  description: ''
+- name: list_brand_assets
+  description: ''
+- name: build_image_url
+  description: ''
+- name: describe_api_endpoint
+  description: ''
+- name: get_account
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
