@@ -9,6 +9,18 @@ created: '2026-09-08'
 modified: '2026-09-09'
 specificationVersion: '0.21'
 tags:
+  - Automotive
+  - Logo
+  - Image CDN
+  - Manufacturer
+  - Brand Assets
+  - Image
+  - CDN
+  - Developer Tools
+  - agent-native
+  - MCP
+  - Reference Data
+tags_raw:
   - automotive
   - logo
   - image-cdn
@@ -29,6 +41,18 @@ apis:
     image: https://motomarks.io/favicon.png
     baseURL: https://api.motomarks.io
     tags:
+      - Automotive
+      - Logo
+      - Image CDN
+      - Manufacturer
+      - Brand Assets
+      - Image
+      - CDN
+      - Developer Tools
+      - agent-native
+      - MCP
+      - Reference Data
+    tags_raw:
       - automotive
       - logo
       - image-cdn
@@ -51,6 +75,18 @@ apis:
     image: https://motomarks.io/favicon.png
     baseURL: https://motomarks.io/img
     tags:
+      - Automotive
+      - Logo
+      - Image CDN
+      - Manufacturer
+      - Brand Assets
+      - Image
+      - CDN
+      - Developer Tools
+      - agent-native
+      - MCP
+      - Reference Data
+    tags_raw:
       - automotive
       - logo
       - image-cdn
@@ -73,6 +109,18 @@ apis:
     image: https://motomarks.io/favicon.png
     baseURL: https://motomarks.io/api/mcp
     tags:
+      - Automotive
+      - Logo
+      - Image CDN
+      - Manufacturer
+      - Brand Assets
+      - Image
+      - CDN
+      - Developer Tools
+      - agent-native
+      - MCP
+      - Reference Data
+    tags_raw:
       - automotive
       - logo
       - image-cdn
