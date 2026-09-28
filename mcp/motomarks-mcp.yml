@@ -84,20 +84,29 @@ x-evidence:
 tools_count: 8
 tools:
 - name: sign_up
-  description: ''
+  description: Create a free Motomarks account or start sign-in for an existing email. Sends a six-digit
+    verification code. No password or credit card. After the user reads the code, call complete_sign_up.
 - name: complete_sign_up
-  description: ''
+  description: Verify the six-digit email code from sign_up. Creates the account when the email is new,
+    then returns API keys so the client can reconnect as that user.
 - name: search_brands
-  description: ''
+  description: Search published Motomarks brands by name, company, or slug. Optionally filter by vehicle
+    type and include ready-to-use CDN image URLs.
 - name: get_brand
-  description: ''
+  description: 'Get full details for a published Motomarks brand by slug: description, colors, palette,
+    social links, company facts, FAQs, and optionally its assets.'
 - name: list_brand_assets
-  description: ''
+  description: List available Motomarks logo assets for a brand and optionally include generated CDN image
+    URLs.
 - name: build_image_url
-  description: ''
+  description: Build a deterministic Motomarks image CDN URL authenticated with the caller's publishable
+    key.
 - name: describe_api_endpoint
-  description: ''
+  description: Return the HTTP endpoint, auth mode, params, and example for a Motomarks REST operation.
 - name: get_account
-  description: ''
+  description: 'Get the authenticated caller''s Motomarks account: plan, attribution status, today''s
+    API usage against the daily limit, and active API keys (secret keys masked).'
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
