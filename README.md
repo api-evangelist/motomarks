@@ -1,4 +1,4 @@
-# motomarks
+# Motomarks
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -65,3 +65,119 @@
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
 A car-manufacturer logo API and image CDN delivering badge, wordmark, and full-logo assets plus structured brand data for 420+ automotive brands. Offers a REST/JSON API, a token-authenticated image CDN, a hosted MCP server, an llms.txt, and published agent skills.
+
+**Areas:** Automotive · Logo · Image CDN · Manufacturer · Brand Assets · Image · CDN · Developer Tools · Agent-Native · MCP · Reference Data
+
+## Motomarks on APIs.io
+
+Everything profiled for Motomarks is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/motomarks/](https://apis.io/providers/motomarks/)** — or go straight to one of the APIs or properties below.
+
+### APIs (3)
+
+- [JSON API](https://apis.io/apis/motomarks/json-api/) — Bearer-authenticated REST/JSON API for listing brands and retrieving full brand detail including color palettes, website, social links, and metadata.
+- [Image CDN](https://apis.io/apis/motomarks/image-cdn/) — Token-authenticated global image CDN delivering car logos in full, badge, and wordmark variants across multiple sizes and formats.
+- [MCP Server](https://apis.io/apis/motomarks/mcp-server/) — Hosted streamable-HTTP MCP server exposing read-only brand tools, account tools, resources, and prompts. Auth via OAuth 2.1 or Bearer secret key. Registry…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [mcp](https://apis.io/servers/motomarks/mcp/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Motomarks Authentication](https://apis.io/security/motomarks/motomarks-authentication/)
+- [Motomarks Domain Security](https://apis.io/security/motomarks/motomarks-domain-security/)
+- [Motomarks Vulnerability Disclosure](https://apis.io/security/motomarks/motomarks-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Motomarks Scopes](https://apis.io/scopes/motomarks/motomarks-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Motomarks Plans Pricing](https://apis.io/plans/motomarks/motomarks-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Motomarks Rate Limits](https://apis.io/rate-limits/motomarks/motomarks-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://motomarks.io)
+- [Getting started](https://motomarks.io/docs)
+- [API reference](https://motomarks.io/docs/api-reference)
+- [Pricing](https://motomarks.io/pricing)
+- [Changelog](https://motomarks.io/changelog)
+- [Terms of service](https://motomarks.io/terms)
+- [Privacy policy](https://motomarks.io/privacy)
+- [GitHub](https://github.com/motomarks)
+
+## API Evangelist rating
+
+**Kin Score 41.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 80.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 60.5 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 63.2 |
+
+**Agent readiness 36.3** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/motomarks/](https://apis.io/providers/motomarks/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Motomarks: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/motomarks/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
